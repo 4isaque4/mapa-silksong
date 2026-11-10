@@ -1,0 +1,221 @@
+# -*- coding: utf-8 -*-
+"""Glossário de tradução EN -> pt-BR do mapa de Pharloom.
+
+Critério: termos descritivos e genéricos são traduzidos; nomes próprios do jogo
+(áreas, chefes, NPCs, ferramentas, habilidades) são mantidos em inglês, que é
+como a comunidade brasileira se refere a eles. Ajuste à vontade.
+"""
+
+# ---------------------------------------------------------------- grupos
+GRUPOS = {
+    "benchTransport": "Bancos e transporte",
+    "mapping":        "Mapas e atalhos",
+    "abilityitems":   "Habilidades e ferramentas",
+    "upgrades":       "Melhorias",
+    "battles":        "Combates",
+    "collectibles":   "Colecionáveis",
+    "npcwish":        "NPCs e desejos",
+    "currency":       "Moedas e recursos",
+    "permFlags":      "Flags e diversos",
+}
+
+# ------------------------------------------------------------ categorias
+CATEGORIAS = {
+    "benches":    "Bancos",
+    "bellway":    "Estações Bellway",
+    "ventrica":   "Estações Ventrica",
+    "maps":       "Shakra e mapas",
+    "shortcut":   "Atalhos",
+    "ability":    "Habilidades",
+    "tool":       "Ferramentas",
+    "crest":      "Crests (brasões)",
+    "key":        "Chaves",
+    "mask":       "Fragmentos de máscara",
+    "spool":      "Fragmentos de carretel",
+    "locket":     "Medalhões de memória",
+    "heart":      "Corações de seda",
+    "kit":        "Kits de fabricação",
+    "pouch":      "Bolsas de ferramenta",
+    "upgnail":    "Pale Oils (melhoria de agulha)",
+    "craftmetal": "Craftmetals",
+    "misc":       "Diversos",
+    "rosaryitem": "Cordões de rosário",
+    "rosary":     "Depósitos de rosários",
+    "sharditem":  "Pacotes de cacos",
+    "shard":      "Depósitos de cacos",
+    "flea":       "Pulgas perdidas",
+    "tradable":   "Itens de troca",
+    "memento":    "Lembranças",
+    "silkeater":  "Devoradores de seda",
+    "mapitem":    "Itens de mapa",
+    "npc":        "NPCs",
+    "vendor":     "Vendedores",
+    "wish":       "Desejos",
+    "wishitem":   "Itens de desejo",
+    "boss":       "Chefes",
+    "arena":      "Arenas",
+    "permFlags":  "Flags permanentes",
+    "info":       "Informações",
+}
+
+# ------------------------------------------------- frases exatas (nomes)
+EXATOS = {
+    "Bench": "Banco",
+    "Bench [Temporary]": "Banco [temporário]",
+    "Rosaries": "Rosários",
+    "Shell Shards": "Cacos de casco",
+    "Shard Bundle": "Pacote de cacos",
+    "Beast Shard": "Caco de fera",
+    "Rosary Chest": "Baú de rosários",
+    "Rosary Necklace": "Colar de rosários",
+    "Rosary String": "Cordão de rosários",
+    "Frayed Rosary String": "Cordão de rosários puído",
+    "Lever": "Alavanca",
+    "Plate": "Placa",
+    "Door": "Porta",
+    "Gate": "Portão",
+    "Ladder": "Escada",
+    "Elevator": "Elevador",
+    "Bridge": "Ponte",
+    "Chest": "Baú",
+    "Map": "Mapa",
+    "Maps": "Mapas",
+    "Bench (for 60 Rosaries)": "Banco (por 60 Rosários)",
+    "Break Wind Rock": "Quebrar rocha de vento",
+    "Intersection - Up/Down or Left/Right": "Cruzamento — cima/baixo ou esquerda/direita",
+    "Intersection - Up/Down": "Cruzamento — cima/baixo",
+    "Intersection - Left/Right": "Cruzamento — esquerda/direita",
+    "Arena": "Arena",
+    "Boss": "Chefe",
+    "Vendor": "Vendedor",
+    "Shop": "Loja",
+    "Fast Travel": "Viagem rápida",
+    "Save": "Salvar",
+    "Secret": "Segredo",
+    "Hidden Area": "Área secreta",
+    "Breakable Wall": "Parede quebrável",
+    "Breakable Floor": "Chão quebrável",
+    "Spike Pit": "Fosso de espinhos",
+    "Acid": "Ácido",
+    "Water": "Água",
+    "Lore Tablet": "Tábua de lore",
+    "Grub": "Grub",
+    "misc": "Diversos",
+    "Enemy": "Inimigo",
+    "Open Door": "Abrir porta",
+    "Drop Platform": "Plataforma de queda",
+    "Access Hidden Area": "Acesso a área secreta",
+    "Activate Light": "Acender a luz",
+    "Awake Statue": "Despertar a estátua",
+    "Requirement Unknown": "Requisito desconhecido",
+    "Heavy Rosary Necklace": "Colar de rosários pesado",
+    "Pale Rosary Necklace": "Colar de rosários pálido",
+    "Hornet Statuette": "Estatueta da Hornet",
+    "given when migrating. migrating reuqires 20 fleas":
+        "entregue ao migrar; migrar exige 20 pulgas",
+    "special chest. stole by grindle":
+        "baú especial; roubado pelo Grindle",
+}
+
+# entradas internas/de depuração do dataset original — removidas da saída
+LIXO = (
+    "bad icon", "TEMP IMPORTANT", "BAD TEMP", "@int,", ">= ", "must be ",
+    "posTODO",
+)
+
+# --------------------------------- padrões (regex -> template de saída)
+# Aplicados na ordem. \1, \2... referenciam os grupos capturados.
+PADROES = [
+    (r"^One-Way Shortcut - Down$",  "Atalho de mão única — para baixo"),
+    (r"^One-Way Shortcut - Up$",    "Atalho de mão única — para cima"),
+    (r"^One-Way Shortcut - Left$",  "Atalho de mão única — para a esquerda"),
+    (r"^One-Way Shortcut - Right$", "Atalho de mão única — para a direita"),
+    (r"^One-Way Shortcut(.*)$",     r"Atalho de mão única\1"),
+    (r"^Two-Way Shortcut(.*)$",     r"Atalho de mão dupla\1"),
+    (r"^Shortcut - (.+)$",          r"Atalho — \1"),
+
+    (r"^Requires (.+)$",            r"Requer \1"),
+    (r"^Needs (.+)$",               r"Requer \1"),
+
+    (r"^Wish Progress for (.+) wish - (.+)$", r"Progresso do desejo “\1” — \2"),
+    (r"^Wish Progress for (.+) wish$",        r"Progresso do desejo “\1”"),
+    (r"^Wish - (.+)$",              r"Desejo — \1"),
+    (r"^Wish Item - (.+)$",         r"Item de desejo — \1"),
+
+    (r"^Break - Wall$",             "Quebrar — parede"),
+    (r"^Break - Floor$",            "Quebrar — chão"),
+    (r"^Break - Ceiling$",          "Quebrar — teto"),
+    (r"^Break - (.+)$",             r"Quebrar — \1"),
+    (r"^Break (.+)$",               r"Quebrar \1"),
+
+    (r"^Battle - (.+)$",            r"Batalha — \1"),
+    (r"^Mini-Boss - (.+)$",         r"Minichefe — \1"),
+    (r"^Item - (.+)$",              r"Item — \1"),
+    (r"^Map Item - (.+)$",          r"Item de mapa — \1"),
+    (r"^Map Vendor - (.+)$",        r"Vendedor de mapas — \1"),
+    (r"^Crest Upgrade - (.+)$",     r"Melhoria de Crest — \1"),
+    (r"^Bellhome Upgrade - (.+)$",  r"Melhoria da Bellhome — \1"),
+    (r"^Upgrade - (.+)$",           r"Melhoria — \1"),
+    (r"^Examine - (.+)$",           r"Examinar — \1"),
+    (r"^Nail Upgrade #(\d+)$",      r"Melhoria de agulha nº \1"),
+    (r"^Craftmetal #(\d+)$",        r"Craftmetal nº \1"),
+    (r"^Silkeater #(\d+)$",         r"Devorador de seda nº \1"),
+    (r"^Simple Key #(\d+)$",        r"Simple Key nº \1"),
+    (r"^Memory for (.+) #(\d+)$",   r"Memória de \1 nº \2"),
+
+    (r"^NPC - (.+)$",               r"NPC — \1"),
+    (r"^Vendor - (.+)$",            r"Vendedor — \1"),
+    (r"^Boss - (.+)$",              r"Chefe — \1"),
+    (r"^Arena - (.+)$",             r"Arena — \1"),
+    (r"^Bellway - (.+)$",           r"Bellway — \1"),
+    (r"^Ventrica - (.+)$",          r"Ventrica — \1"),
+    (r"^Bench - (.+)$",             r"Banco — \1"),
+    (r"^Map - (.+)$",               r"Mapa — \1"),
+    (r"^Key - (.+)$",               r"Chave — \1"),
+    (r"^Tool - (.+)$",              r"Ferramenta — \1"),
+    (r"^Ability - (.+)$",           r"Habilidade — \1"),
+    (r"^Crest - (.+)$",             r"Crest — \1"),
+    (r"^Memento - (.+)$",           r"Lembrança — \1"),
+    (r"^Tradable - (.+)$",          r"Item de troca — \1"),
+    (r"^Quest Item - (.+)$",        r"Item de missão — \1"),
+    (r"^Lost Flea #(\d+)(.*)$",     r"Pulga perdida nº \1\2"),
+    (r"^Silkeater - (.+)$",         r"Devorador de seda — \1"),
+    (r"^Mask Shard(.*)$",           r"Fragmento de máscara\1"),
+    (r"^Spool Fragment(.*)$",       r"Fragmento de carretel\1"),
+    (r"^Memory Locket(.*)$",        r"Medalhão de memória\1"),
+    (r"^Silk Heart(.*)$",           r"Coração de seda\1"),
+    (r"^Tool Pouch(.*)$",           r"Bolsa de ferramenta\1"),
+    (r"^Crafting Kit(.*)$",         r"Kit de fabricação\1"),
+    (r"^Pale Oil(.*)$",             r"Pale Oil\1"),
+]
+
+# ---- fragmentos substituídos dentro de qualquer nome que sobrar -------
+FRAGMENTOS = [
+    ("(for ", "(por "),
+    (" Rosaries)", " Rosários)"),
+    (" Rosaries", " Rosários"),
+    ("Shell Shards", "Cacos de casco"),
+    ("Rosary String", "Cordão de rosários"),
+    ("[Temporary]", "[temporário]"),
+    ("Unlocked", "Desbloqueado"),
+    ("Locked", "Trancado"),
+    ("Defeated", "Derrotado"),
+    ("Completed", "Concluído"),
+    ("after ", "depois de "),
+    ("before ", "antes de "),
+    (" and ", " e "),
+    (" or ", " ou "),
+    (" with ", " com "),
+    (" from ", " de "),
+    ("Requires", "Requer"),
+    ("Optional", "Opcional"),
+    ("Act 1", "Ato 1"),
+    ("Act 2", "Ato 2"),
+    ("Act 3", "Ato 3"),
+]
+
+# ------------------------------------------------------- textos da UI
+UI = {
+    "titulo": "Mapa de Pharloom",
+    "subtitulo": "Hollow Knight: Silksong — mapa interativo em português",
+}

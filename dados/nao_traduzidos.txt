@@ -1,0 +1,22 @@
+>= 1
+>= 2
+@int,Coral_38,Shell Fossil Mimic,-1
+Architect's Key
+Bellhome Key
+Craw Summons
+Crest of Architect
+Crest of the Beast
+Crest of the Reaper
+Crest of the Shaman
+Crest of the Wanderer
+Crest of the Witch
+Diving Bell Key
+Key of Apostate
+Key of Heretic
+Key of Indolent
+Pristine Core
+Surgeon's Key
+TEMP IMPORTANT bad position
+White Key
+bad icon
+must be >= 1

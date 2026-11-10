@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa de Pharloom</title>
+<meta name="description" content="Mapa interativo de Hollow Knight: Silksong em português — todos os colecionáveis, chefes, bancos e atalhos de Pharloom.">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div id="app">
+
+  <aside id="painel" aria-label="Filtros e progresso">
+    <header class="cabecalho">
+      <h1>Mapa de Pharloom</h1>
+      <p class="sub">Hollow Knight: Silksong</p>
+    </header>
+
+    <div class="progresso-geral">
+      <div class="barra"><span id="barra-geral"></span></div>
+      <div class="linha-progresso">
+        <strong id="texto-progresso">0 / 0</strong>
+        <button id="btn-zerar" class="link" type="button">zerar progresso</button>
+      </div>
+    </div>
+
+    <div class="busca">
+      <input id="busca" type="search" placeholder="Buscar marcador…" autocomplete="off"
+             aria-label="Buscar marcador pelo nome">
+      <ul id="resultados" hidden></ul>
+    </div>
+
+    <div class="opcoes">
+      <label><input type="checkbox" id="opt-ocultar-coletados"> Ocultar coletados</label>
+      <label><input type="checkbox" id="opt-areas" checked> Nomes das áreas</label>
+      <div class="atalhos">
+        <button type="button" class="link" data-acao="todos">marcar todas as camadas</button>
+        <button type="button" class="link" data-acao="nenhum">desmarcar todas</button>
+        <button type="button" class="link" id="btn-enquadrar">ver mapa inteiro</button>
+      </div>
+    </div>
+
+    <nav id="camadas" aria-label="Camadas do mapa"></nav>
+
+    <footer class="rodape">
+      <p>Dados da comunidade (scripterswar.com / RainingChain).
+         Arte do mapa © Team Cherry. Projeto de fã, sem fins lucrativos.</p>
+    </footer>
+  </aside>
+
+  <button id="alternar-painel" type="button" aria-label="Mostrar ou ocultar o painel">☰</button>
+
+  <div id="mapa"></div>
+
+  <div id="dica-coords" aria-live="polite"></div>
+</div>
+
+<script src="vendor/leaflet.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

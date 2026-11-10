@@ -1,0 +1,10 @@
+# tiles do mapa: arte da Team Cherry, baixada localmente pelo script
+web/tiles/
+
+# cache do dataset bruto de origem
+dados/cache/
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
