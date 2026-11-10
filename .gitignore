@@ -8,3 +8,6 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# pacote gerado para publicar como Artifact
+artefato/

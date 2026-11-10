@@ -23,7 +23,8 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-#app{display:flex;height:100vh;height:100dvh}
+html,body{height:100%}
+#app{display:flex;height:100%}
 
 /* ----------------------------------------------------------- painel */
 #painel{
